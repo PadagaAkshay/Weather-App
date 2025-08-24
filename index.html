@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard - API Data Display</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> Weather Dashboard</h1>
+            <p>Real-time weather data from OpenWeatherMap API</p>
+        </header>
+
+        <main>
+            <div class="search-section">
+                <div class="search-container">
+                    <input type="text" id="cityInput" placeholder="Enter city name (e.g., London, New York)">
+                    <button id="searchBtn"><i class="fas fa-search"></i> Get Weather</button>
+                </div>
+            </div>
+
+            <div class="loading" id="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <p>Fetching weather data...</p>
+            </div>
+
+            <div class="error-message" id="errorMessage">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p id="errorText"></p>
+            </div>
+
+            <div class="weather-container" id="weatherContainer">
+                <div class="current-weather">
+                    <div class="weather-header">
+                        <h2 id="cityName"></h2>
+                        <p id="currentDate"></p>
+                    </div>
+                    
+                    <div class="weather-main">
+                        <div class="temperature">
+                            <span id="temperature"></span>
+                            <div class="weather-icon">
+                                <i id="weatherIcon"></i>
+                            </div>
+                        </div>
+                        <div class="weather-description">
+                            <p id="description"></p>
+                            <p id="feelsLike"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <i class="fas fa-eye"></i>
+                        <div>
+                            <span class="label">Visibility</span>
+                            <span class="value" id="visibility"></span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-tint"></i>
+                        <div>
+                            <span class="label">Humidity</span>
+                            <span class="value" id="humidity"></span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-wind"></i>
+                        <div>
+                            <span class="label">Wind Speed</span>
+                            <span class="value" id="windSpeed"></span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-thermometer-half"></i>
+                        <div>
+                            <span class="label">Pressure</span>
+                            <span class="value" id="pressure"></span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-sun"></i>
+                        <div>
+                            <span class="label">UV Index</span>
+                            <span class="value" id="uvIndex"></span>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <i class="fas fa-cloud"></i>
+                        <div>
+                            <span class="label">Cloudiness</span>
+                            <span class="value" id="cloudiness"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="additional-info">
+                    <div class="info-item">
+                        <i class="fas fa-sunrise"></i>
+                        <div>
+                            <span class="label">Sunrise</span>
+                            <span class="value" id="sunrise"></span>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-sunset"></i>
+                        <div>
+                            <span class="label">Sunset</span>
+                            <span class="value" id="sunset"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by OpenWeatherMap API | Built with HTML, CSS, JavaScript & Node.js</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
